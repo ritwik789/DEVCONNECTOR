@@ -7,6 +7,7 @@ import DashboardActions from './DashboardActions';
 import Experience from './Experience';
 import Education from './Education';
 import Spinner from '../layout/Spinner';
+import Profile from './../profile/Profile';
 
 const Dashboard = ({ getCurrentProfile, deleteAccount, auth: { user }, profile: { profile, loading } }) => {
 	useEffect(() => {
@@ -24,7 +25,7 @@ const Dashboard = ({ getCurrentProfile, deleteAccount, auth: { user }, profile: 
 
 			{profile !== null ? (
 				<Fragment>
-					<DashboardActions />
+					<DashboardActions id={user._id} />
 					<Experience experience={profile.experience} />
 					<Education education={profile.education} />
 

@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getProfileById } from './../../actions/profile';
@@ -11,14 +11,21 @@ import ProfileEducation from './ProfileEducation';
 import ProfileGithub from './ProfileGithub';
 
 const Profile = ({ getProfileById, profile: { profile, loading }, auth, match }) => {
+	const [localLoading, setLocalLoading] = useState(true);
+
 	useEffect(() => {
 		getProfileById(match.params.id);
+		setTimeout(() => {
+			setLocalLoading(false);
+		}, 500);
 	}, [getProfileById, match.params.id]);
 
 	return (
 		<Fragment>
-			{profile === null || loading ? (
+			{localLoading ? (
 				<Spinner />
+			) : profile === null ? (
+				<h3>Profile not found</h3>
 			) : (
 				<Fragment>
 					<Link to='/profiles' className='btn btn-light'>
