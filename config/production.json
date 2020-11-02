@@ -1,6 +1,0 @@
-{
-	"mongoURI": "mongodb+srv://ritwik123:Ritwik@123-mongodb@devconnector.za0hr.mongodb.net/DevConnector",
-	"jwtSecret": "mysecrettoken",
-	"githubClientId": "f56479ea7221d67cd588",
-	"githubSecret": "b8a517dff3c35a5056ec95dc656dc4ebdbc551fd"
-}
