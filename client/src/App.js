@@ -23,7 +23,7 @@ import { loadUser } from './actions/auth';
 import setAuthToken from './utils/setAuthToken';
 
 import './App.css';
-import ErrorPage from './ErrorPage';
+// import ErrorPage from './ErrorPage';
 
 if (localStorage.token) {
 	setAuthToken(localStorage.token);
@@ -54,7 +54,7 @@ const App = () => {
 							<PrivateRoute exact path='/add-education' component={AddEducation} />
 							<PrivateRoute exact path='/posts' component={Posts} />
 							<PrivateRoute exact path='/posts/:id' component={Post} />
-							<Route exact path='/*' component={ErrorPage} />
+							{/* <Route exact path='/*' component={ErrorPage} /> */}
 						</Switch>
 					</section>
 				</Fragment>
