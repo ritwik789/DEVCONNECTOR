@@ -7,6 +7,11 @@ export const setAlert = (msg, alertType, timeout = 5000) => (dispatch) => {
 		type: SET_ALERT,
 		payload: { msg, alertType, id },
 	});
+	window.scrollTo({
+		top: 0,
+		left: 0,
+		behavior: 'smooth',
+	});
 
 	setTimeout(
 		() =>
